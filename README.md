@@ -3,3 +3,5 @@ This is repo that used for COMP3021 lab session
 
 Name: Lei Yongyu
 SID: 20583515
+
+Lab2 has been finished, plz check /src/base
