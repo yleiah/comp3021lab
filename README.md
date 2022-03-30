@@ -10,4 +10,6 @@ Lab3 has been finished, plz check /src/base
 
 Lab4 has been finished, plz check /src/base
 
-Lab4 has been finished, plz check /src/lab5
+Lab5 has been finished, plz check /src/lab5
+
+Lab6 has been finished, plz check /src/lab6
