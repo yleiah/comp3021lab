@@ -53,9 +53,23 @@ public class Folder implements Comparable<Folder>, java.io.Serializable{
 		Collections.sort(notes);
 	}
 	
+	public void removeNote(String s) {
+		for(Note n:this.notes) {
+			if(n.getTiltle().equals(s)) {
+				this.notes.remove(n);
+			}
+		}
+	}
+	
 	public List<Note> searchNotes(String keywords){
 		
+		
 		String[] keywordList = keywords.split(" ");
+		
+		if(keywords.length() == 0 || keywords.equals("")) {
+			return this.notes;
+		}
+		
 		ArrayList<ArrayList<String>> keyWordsCache = new ArrayList<ArrayList<String>>();
 		ArrayList<Note> out = new ArrayList<Note>();
 		
@@ -80,7 +94,7 @@ public class Folder implements Comparable<Folder>, java.io.Serializable{
 					if(note.getTiltle().toLowerCase().contains(s.toLowerCase())) {
 						b2 = true;
 					}
-					if((note instanceof TextNote && ((TextNote) note).getContent().toLowerCase().contains(s.toLowerCase()))) {
+					if((((TextNote) note).getContent() != null) && note instanceof TextNote && ((TextNote) note).getContent().toLowerCase().contains(s.toLowerCase())) {
 						b2 = true;
 					}
 				}

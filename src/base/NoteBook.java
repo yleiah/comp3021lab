@@ -18,6 +18,7 @@ public class NoteBook implements java.io.Serializable{
       //lab5
       public NoteBook(String file) {
     	  try {
+    		  System.out.println(file);
     		  FileInputStream fis = new FileInputStream(file);
     		  ObjectInputStream in = new ObjectInputStream(fis);
     		  NoteBook n = (NoteBook)in.readObject();
@@ -95,6 +96,18 @@ public class NoteBook implements java.io.Serializable{
     		  e.printStackTrace();
     		  return false;
     	  }
+    	  return true;
+      }
+      
+      public boolean addFolder(String name) {
+    	  for(Folder f:folders) {
+    		  if(f.getName().equals(name)) {
+    			  return false;
+    		  }
+    	  }
+    	  
+    	  Folder newFolder = new Folder(name);
+    	  folders.add(newFolder);
     	  return true;
       }
 }
