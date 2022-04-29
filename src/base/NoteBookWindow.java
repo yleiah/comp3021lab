@@ -182,12 +182,6 @@ public class NoteBookWindow extends Application {
 		        	noteBook = new NoteBook(file.getPath());
 		        	for(Folder f : noteBook.getFolders()) {
 		        		foldersComboBox.getItems().add(f.getName());
-		    			for(Note n: f.getNotes()) {
-		    				System.out.println(n.getTiltle());
-		    				if(n instanceof TextNote) {
-		    					System.out.println(((TextNote) n).getContent());
-		    				}
-		    			}
 		    		}
 		        }
 		        updateListView();  

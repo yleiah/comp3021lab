@@ -18,7 +18,7 @@ public class NoteBook implements java.io.Serializable{
       //lab5
       public NoteBook(String file) {
     	  try {
-    		  System.out.println(file);
+    		  //System.out.println(file);
     		  FileInputStream fis = new FileInputStream(file);
     		  ObjectInputStream in = new ObjectInputStream(fis);
     		  NoteBook n = (NoteBook)in.readObject();
